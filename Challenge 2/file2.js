@@ -9,11 +9,12 @@ function add(a, b) {
   }
   
   function internal() {
-	const added = add(this.internal.a, this.internal.b); // correcct way to engage the add and muliply is with this.a and this.b!
-	const multiplied = multiply(this.internal.a, this.internal.b);
-	console.log(added); // Log the value 48 to the console
+	const added = this.add(this.internal.a, this.internal.b); // correcct way to engage the add and muliply is with this.a and this.b!
+	const multiplied = this.multiply(added,this.internal.c);
+	//const multiplied = multiply(this.internal.a, this.internal.b);
+	//console.log(added); // Log the value 48 to the console
 	console.log(multiplied); // Log the value 12 to the console
-	return this;
+	//return this;
   }
   
 // Not allowed to change below this
