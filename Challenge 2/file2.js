@@ -1,15 +1,21 @@
 // script.js
 
-const add = (a, b) =>  a + b;
-
-const multiply = (a, b) =>  a * b;
-
-function internal(add, multiply, a, b) {
-    const added = add(a, b);
-    const multiplied = multiply(a, b);
-    return { added, multiplied };
+function add(a, b) {
+	return a + b;
   }
-
+  
+  function multiply(a, b) {
+	return a * b;
+  }
+  
+  function internal() {
+	const added = add(this.internal.a, this.internal.b); // correcct way to engage the add and muliply is with this.a and this.b!
+	const multiplied = multiply(this.internal.a, this.internal.b);
+	console.log(added); // Log the value 48 to the console
+	console.log(multiplied); // Log the value 12 to the console
+	return this;
+  }
+  
 // Not allowed to change below this
 
 const example1 = {
@@ -36,3 +42,5 @@ const example2 = {
 
 example1.calculate()
 example2.calculate()
+
+
